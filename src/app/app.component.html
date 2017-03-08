@@ -1,3 +1,36 @@
-<h1>
+<nav class="nav has-shadow">
+
+  <div class="container ">
+
+    <nav class="nav-left">
+
+      <a href="" class="nav-item is-tab">Home</a>
+      <a href="" class="nav-item is-tab">Music</a>
+    </nav>
+
+
+  </div>
+</nav>
+
+<div class="container">
+<h1 (click)="handleClick()">
   {{title}}
 </h1>
+
+</div>
+<ma-home [owner]="title" (timePassed)="handleTime($event)"></ma-home>
+
+<div class="columns">
+  <div class="column">
+    <p class="notification is-info">column</p>
+  </div>
+  <div class="column">
+    <p class="notification is-success">column</p>
+  </div>
+  <div class="column">
+    <p class="notification is-warning">column</p>
+  </div>
+  <div class="column">
+    <p class="notification is-danger">column</p>
+  </div>
+</div>

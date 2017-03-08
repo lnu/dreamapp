@@ -1,10 +1,18 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'ma-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'app works!';
+  
+  handleClick(){
+    this.title =' new title';
+  }
+
+  handleTime(time: number) {
+    console.log(time);
+  }
 }
