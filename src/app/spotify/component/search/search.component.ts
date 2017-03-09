@@ -1,12 +1,13 @@
 import { BookmarksService } from './../../../bookmarks/service/bookmarks.service';
 import { IAlbum } from './../../model/spotify.model';
 import { SpotifyService } from './../../service/spotify.service';
-import { Component, OnInit, trigger, state, style, transition, animate  } from '@angular/core';
+import { Component, OnInit, trigger, state, style, transition, animate, ViewEncapsulation  } from '@angular/core';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated,
    animations: [
     trigger('flyInOut', [
       state('in', style({ transform: 'translateX(0)' })),
