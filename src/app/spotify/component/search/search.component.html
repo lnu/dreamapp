@@ -1,0 +1,17 @@
+<div class="columns">
+  <div class="column is-3">
+    <h2 class="subtitle">Bookmarks</h2>
+  </div>
+  <div class="column">
+    <h2 class="subtitle">Find albums</h2>
+    <div class="control has-addons">
+      <input #searchBox type="search" class="input" placeholder="search...">
+      <button class="button is-primary" (click)="search(searchBox.value)">search</button>
+    </div>
+    <div class="columns is-multiline">
+      <div class="column is-4" *ngFor="let album of _albums">
+        <app-poster  size="lg" [album]="album"></app-poster>
+      </div>
+    </div>
+  </div>
+</div>
