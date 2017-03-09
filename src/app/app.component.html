@@ -4,8 +4,9 @@
 
     <nav class="nav-left">
 
-      <a href="" class="nav-item is-tab">Home</a>
-      <a href="" class="nav-item is-tab">Music</a>
+      <a routerLink="" class="nav-item is-tab" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="is-active">Home</a>
+      <a routerLink="spotify" class="nav-item is-tab" routerLinkActive="is-active">Music</a>
+      <a routerLink="contact" class="nav-item is-tab" routerLinkActive="is-active">Contact</a>
     </nav>
 
 
@@ -13,24 +14,11 @@
 </nav>
 
 <div class="container">
-<h1 (click)="handleClick()">
+
+<!--<h1 (click)="handleClick()">
   {{title}}
-</h1>
-
+</h1>-->
+<router-outlet></router-outlet>
 </div>
-<ma-home [owner]="title" (timePassed)="handleTime($event)"></ma-home>
+<!--<ma-home [owner]="title" (timePassed)="handleTime($event)"></ma-home>-->
 
-<div class="columns">
-  <div class="column">
-    <p class="notification is-info">column</p>
-  </div>
-  <div class="column">
-    <p class="notification is-success">column</p>
-  </div>
-  <div class="column">
-    <p class="notification is-warning">column</p>
-  </div>
-  <div class="column">
-    <p class="notification is-danger">column</p>
-  </div>
-</div>
