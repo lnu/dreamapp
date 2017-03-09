@@ -1,16 +1,11 @@
 <div class="card">
   <div class="card-image">
-    <figure class="image is-4by4">
+    <figure class="image is-2by2">
       <img src="{{imageUrl}}" alt="Image">
     </figure>
   </div>
   <div class="card-content">
     <div class="media">
-      <div class="media-left">
-        <figure class="image" style="height: 40px; width: 40px;">
-          <img src="" alt="Image">
-        </figure>
-      </div>
       <div class="media-content">
         <p class="title is-4">{{album.name}}</p>
         <p class="subtitle is-6">{{album.artists[0].name}}</p>
@@ -18,10 +13,7 @@
     </div>
 
     <div class="content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-      <a>#css</a> <a>#responsive</a>
-      <br>
-      <small>11:09 PM - 1 Jan 2016</small>
+      <span> {{album.type}} </span>
     </div>
   </div>
 </div>
