@@ -1,16 +1,21 @@
 <div class="columns">
   <div class="column is-3">
     <h2 class="subtitle">Bookmarks</h2>
+    <div class="columns is-multiline is-6">
+      <app-poster *ngFor="let bookmark of getBookmarks()" [album]="bookmark" size="sm"></app-poster>
+    </div>
   </div>
   <div class="column">
     <h2 class="subtitle">Find albums</h2>
-    <div class="control has-addons">
-      <input #searchBox type="search" class="input" placeholder="search...">
-      <button class="button is-primary" (click)="search(searchBox.value)">search</button>
-    </div>
+    <form class="control has-addons">
+      <input [(ngModel)]="query" name="query" type="search" class="input" placeholder="search...">
+      <button class="button is-primary" (click)="search(query)">search</button>
+    </form>
     <div class="columns is-multiline">
-      <div class="column is-4" *ngFor="let album of _albums">
-        <app-poster  size="lg" [album]="album"></app-poster>
+      <div class="column is-4" *ngFor="let album of _albums" [@flyInOut]="'in'">
+        <app-poster size="lg" [album]="album">
+          <button class="button is-info" (click)="saveBookmark(album)">save</button>
+        </app-poster>
       </div>
     </div>
   </div>

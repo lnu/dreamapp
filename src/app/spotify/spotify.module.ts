@@ -1,3 +1,5 @@
+import { BookmarksModule } from './../bookmarks/bookmarks.module';
+import { FormsModule } from '@angular/forms';
 import { SpotifyService } from './service/spotify.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -6,7 +8,9 @@ import { PosterComponent } from './poster/poster.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    BookmarksModule
   ],
   declarations: [SearchComponent, PosterComponent],
   providers: [

@@ -1,19 +1,6 @@
-<div class="card">
-  <div class="card-image">
-    <figure class="image is-2by2">
-      <img src="{{imageUrl}}" alt="Image">
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-content">
-        <p class="title is-4">{{album.name}}</p>
-        <p class="subtitle is-6">{{album.artists[0].name}}</p>
-      </div>
-    </div>
-
-    <!--<div class="content">
-      <span> {{album.type}} </span>
-    </div>-->
-  </div>
+<div>
+  <img src="{{imageUrl}}" alt="Image">
+  <ng-content></ng-content>
 </div>
+<p class="subtitle is-4">{{album.name}}</p>
+
