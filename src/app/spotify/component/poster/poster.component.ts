@@ -1,4 +1,4 @@
-import { IAlbum, Size } from './../model/spotify.model';
+import { IAlbum, Size } from './../../model/spotify.model';
 import { Component, OnInit, Input, trigger, state, style, transition, animate  } from '@angular/core';
 
 import * as _ from 'lodash';

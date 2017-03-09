@@ -5,8 +5,8 @@ import { SpotifyService } from './service/spotify.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SearchComponent } from './component/search/search.component';
-import { PosterComponent } from './poster/poster.component';
-import { AlbumDetailsComponent } from './album-details/album-details.component';
+import { PosterComponent } from './component/poster/poster.component';
+import { AlbumDetailsComponent } from './component/album-details/album-details.component';
 
 @NgModule({
   imports: [
