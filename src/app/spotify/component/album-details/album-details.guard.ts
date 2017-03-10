@@ -8,6 +8,7 @@ export class AlbumDetailsGuard implements CanActivate {
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot
     ): boolean {
-        return prompt('Are you logged in ?') === 'yes';
+       // return prompt('Are you logged in ?') === 'yes';
+       return true;
     }
 }  

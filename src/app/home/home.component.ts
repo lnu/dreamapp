@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
+
 @Component({
   selector: 'ma-home',
   templateUrl: './home.component.html',

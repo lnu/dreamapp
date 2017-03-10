@@ -1,3 +1,22 @@
-<p>
-  contact works!
-</p>
+<div class="columns">
+  <form #formRef="ngForm" action="" class="column is-6 is-offset-3" novalidate>
+    <h1 class="title">Contact us</h1>
+    <label for="name" class="label">Your name</label>
+    <div class="control">
+      <input id="name" #nameRef="ngModel" required minlength="3" name="name" type="text" class="input" [(ngModel)]="name">
+      <!--<pre>{{nameRef.errors | json}}</pre>-->
+      <div class="help is-danger" *ngIf="nameRef.touched && nameRef.invalid">
+        <span *ngIf="nameRef.errors?.required">This field is required</span>
+        <span *ngIf="nameRef.errors?.minlength">Provide at least 3 characters</span>
+      </div>
+    </div>
+    <label for="message" class="label">Message</label>
+    <div class="control">
+      <textarea name="message" id="message" cols="30" rows="10" class="textarea" [(ngModel)]="message"></textarea>
+    </div>
+    <span *ngIf="nameRef.errors?.required">This field is required</span>
+    <button class="button is-primary is-pulled-right" [disabled]="formRef.invalid">
+      Send
+    </button>
+  </form>
+</div>

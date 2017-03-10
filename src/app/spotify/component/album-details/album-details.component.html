@@ -3,7 +3,7 @@
     <app-poster [album]="album" size="lg"></app-poster>
   </div>
   <div class="column">
-    <h1 class="title">{{album.name}}</h1>
+    <h1 class="title">{{album.name | uppercase}}</h1>
     <table class="table">
       <thead>
         <tr>
@@ -13,15 +13,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let track of album?.tracks.items">
-          <td>
-            {{track.track_number}}
+        <tr [class.is-danger]="(track.duration_ms | msToMinutes) < 4" *ngFor="let track of album?.tracks.items">
+          <td >
+            <span  >{{track.track_number}}</span>
           </td>
           <td>
             {{track.name}}
           </td>
           <td>
-            {{track.duration_ms}}
+            {{track.duration_ms | msToMinutes:true}}
           </td>
         </tr>
       </tbody>

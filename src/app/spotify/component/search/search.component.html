@@ -7,8 +7,8 @@
   </div>
   <div class="column">
     <h2 class="subtitle">Find albums</h2>
-    <form class="control has-addons">
-      <input [(ngModel)]="query" name="query" type="search" class="input" placeholder="search...">
+    <form class="control has-addons" [formGroup]="searchForm">
+      <input formControlName="query" name="query" type="search" class="input" placeholder="search...">
       <button class="button is-primary" (click)="search(query)">search</button>
     </form>
     <div class="columns is-multiline">
