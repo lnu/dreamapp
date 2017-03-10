@@ -1,3 +1,4 @@
+import { AlbumDetailsGuard } from './spotify/component/album-details/album-details.guard';
 import { AlbumDetailsResolver } from './spotify/component/album-details/album-details.resolver';
 import { AlbumDetailsComponent } from './spotify/component/album-details/album-details.component';
 import { SearchComponent } from './spotify/component/search/search.component';
@@ -12,6 +13,7 @@ export const appRoutes: Routes = [
     {
         path: 'spotify/:id', component: AlbumDetailsComponent, resolve: {
             album: AlbumDetailsResolver
-        }
+        },
+        canActivate: [AlbumDetailsGuard]
     }
 ];

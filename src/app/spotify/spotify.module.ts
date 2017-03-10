@@ -1,3 +1,4 @@
+import { AlbumDetailsGuard } from './component/album-details/album-details.guard';
 import { AlbumDetailsResolver } from './component/album-details/album-details.resolver';
 import { RouterModule } from '@angular/router';
 import { BookmarksModule } from './../bookmarks/bookmarks.module';
@@ -19,7 +20,8 @@ import { AlbumDetailsComponent } from './component/album-details/album-details.c
   declarations: [SearchComponent, PosterComponent, AlbumDetailsComponent],
   providers: [
     SpotifyService,
-    AlbumDetailsResolver
+    AlbumDetailsResolver,
+    AlbumDetailsGuard
   ]
 })
 export class SpotifyModule { }
