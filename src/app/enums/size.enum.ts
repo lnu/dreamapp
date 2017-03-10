@@ -1,0 +1,1 @@
+export enum Size { lg, md, sm }

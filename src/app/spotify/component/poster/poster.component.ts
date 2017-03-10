@@ -1,7 +1,8 @@
-import { IAlbum, Size } from './../../model/spotify.model';
+import { IAlbum } from './../../model/spotify.model';
 import { Component, OnInit, Input, trigger, state, style, transition, animate, OnChanges, ChangeDetectionStrategy } from '@angular/core';
 
 import * as _ from 'lodash';
+import { Size } from "../../../enums/size.enum";
 
 @Component({
   selector: 'app-poster',
