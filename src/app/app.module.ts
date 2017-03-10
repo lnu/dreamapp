@@ -23,7 +23,6 @@ import { ContactComponent } from './contact/contact.component';
     AppRoutingModule,
     SpotifyModule
   ],
-  providers: [AlbumDetailsResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

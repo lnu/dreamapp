@@ -1,3 +1,4 @@
+import { AlbumDetailsResolver } from './component/album-details/album-details.resolver';
 import { RouterModule } from '@angular/router';
 import { BookmarksModule } from './../bookmarks/bookmarks.module';
 import { FormsModule } from '@angular/forms';
@@ -17,7 +18,8 @@ import { AlbumDetailsComponent } from './component/album-details/album-details.c
   ],
   declarations: [SearchComponent, PosterComponent, AlbumDetailsComponent],
   providers: [
-    SpotifyService
+    SpotifyService,
+    AlbumDetailsResolver
   ]
 })
 export class SpotifyModule { }
