@@ -1,3 +1,4 @@
+import { AlbumDetailsResolver } from './spotify/component/album-details/album-details.resolver';
 import { SpotifyModule } from './spotify/spotify.module';
 import { AppRoutingModule } from './app.routing.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,7 +23,7 @@ import { ContactComponent } from './contact/contact.component';
     AppRoutingModule,
     SpotifyModule
   ],
-  providers: [],
+  providers: [AlbumDetailsResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

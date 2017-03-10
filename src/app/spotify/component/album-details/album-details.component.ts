@@ -10,7 +10,7 @@ export interface IAlbumDetailsParams{
 @Component({
   selector: 'app-album-details',
   templateUrl: './album-details.component.html',
-  styleUrls: ['./album-details.component.scss']
+  styleUrls: ['./album-details.component.scss'] 
 })
 export class AlbumDetailsComponent implements OnInit {
 
@@ -21,13 +21,14 @@ export class AlbumDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.album  = this._route.snapshot.data['album'];
     //  this._route.params.forEach((params: Params) => {
     //         let id = +params['id'];
     //         //this._spotifyService.getHero(id).subscribe(hero => this.hero = hero);
 
     //     });
-  const id = (<IAlbumDetailsParams> this._route.snapshot.params).id ;
-              this._spotifyService.getAlbum(id).subscribe(album => this.album = album);
+  // const id = (<IAlbumDetailsParams> this._route.snapshot.params).id ;
+  //             this._spotifyService.getAlbum(id).subscribe(album => this.album = album);
 
   }
 
