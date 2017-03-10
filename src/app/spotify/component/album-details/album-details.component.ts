@@ -1,5 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from "@angular/router";
+import { IAlbum, IAlbumDetails } from './../../model/spotify.model';
+import { SpotifyService } from './../../service/spotify.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+
+export interface IAlbumDetailsParams{
+  id: string;
+}
 
 @Component({
   selector: 'app-album-details',
@@ -8,13 +14,21 @@ import { ActivatedRoute, Params } from "@angular/router";
 })
 export class AlbumDetailsComponent implements OnInit {
 
-  constructor(private _route: ActivatedRoute) {  }
+  @Input() album: IAlbumDetails;
+
+  constructor(private _route: ActivatedRoute, private _spotifyService: SpotifyService) {
+
+  }
 
   ngOnInit() {
-     this._route.params.forEach((params: Params) => {
-            let id = +params['id'];
-            //this._spotifyService.getHero(id).subscribe(hero => this.hero = hero);
-        });
+    //  this._route.params.forEach((params: Params) => {
+    //         let id = +params['id'];
+    //         //this._spotifyService.getHero(id).subscribe(hero => this.hero = hero);
+
+    //     });
+  const id = (<IAlbumDetailsParams> this._route.snapshot.params).id ;
+              this._spotifyService.getAlbum(id).subscribe(album => this.album = album);
+
   }
 
 }
