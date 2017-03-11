@@ -3,25 +3,36 @@
     <app-poster [album]="album" size="lg"></app-poster>
   </div>
   <div class="column">
-    <h1 class="title">{{album.name | uppercase}}</h1>
+    <h1 class="title">{{album.name | uppercase}}
+      <a [href]="album.uri | safeHtml" title="open in spotify">
+        <i class="fa fa-spotify" aria-hidden="true" style="vertical-align: middle"></i>
+      </a>
+    </h1>
+    <h2>
+      <a *ngFor="let artist of album.artists" [href]="artist.uri | safeHtml">{{artist.name}}, </a>
+    </h2>
     <table class="table">
       <thead>
         <tr>
           <th>number</th>
           <th>track name</th>
           <th>duration</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
-        <tr [class.is-danger]="(track.duration_ms | msToMinutes) < 4" *ngFor="let track of album?.tracks.items">
-          <td >
-            <span  >{{track.track_number}}</span>
+        <tr [class.is-danger]="(track.duration_ms | msToMinutes) < 1" *ngFor="let track of album?.tracks.items">
+          <td>
+            <span>{{track.track_number}}</span>
           </td>
           <td>
             {{track.name}}
           </td>
           <td>
             {{track.duration_ms | msToMinutes:true}}
+          </td>
+          <td>
+            <a [href]="track.uri | safeHtml" title="open in spotify"><i class="fa fa-spotify" aria-hidden="true"></i></a>
           </td>
         </tr>
       </tbody>
